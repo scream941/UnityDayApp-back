@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
 
 app.post('/save-state', (req, res) => {
     res.send(``)
-    console.log(req.body);
-    fs.
+    if(!req.body.btnState) {
+      console.log(`Кнопка нажата`);
+      fs.appendFileSync('src/log.txt', 'Кнопка нажата ');
+    } else {
+    console.log(`Кнопка отжата`) ;
+    fs.appendFileSync('src/log.txt', 'Кнопка отжата ');
+  }
 });
